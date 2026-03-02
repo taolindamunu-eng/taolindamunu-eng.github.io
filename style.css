@@ -6,33 +6,72 @@
 }
 
 body {
-    background: #f4f1ed;
-    color: #222;
-}
-
-/* CONTAINER */
-.container {
-    max-width: 1100px;
-    margin: auto;
-    padding: 60px 30px;
-    display: flex;
-    gap: 60px;
+    background: #59b3e7;
+    color: #444;
 }
 
 /* ======================
-   KIRI
+   CONTAINER (1 KOLOM)
+====================== */
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 60px 30px;
+    display: flex;
+    flex-direction: column;   /* 1 kolom */
+    align-items: center;      /* ke tengah */
+    text-align: center;
+}
+
+/* ======================
+   FOTO (PALING ATAS)
+====================== */
+.right {
+    order: 1;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.photo-wrapper,
+.photo-bg {
+    display: none;
+}
+
+.right img {
+    position: static;
+    width: 150px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 6px;
+}
+
+/* ======================
+   TEKS
 ====================== */
 .left {
-    flex: 1;
+    width: 100%;
+    order: 2;
 }
 
 .left h1 {
     font-size: 36px;
     margin-bottom: 20px;
+    letter-spacing: 0.5px;
 }
 
 .left h1 span {
     color: #2f6f6b;
+}
+
+.left h1,
+.left h2,
+.left p,
+.list {
+    max-width: 680px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .desc {
@@ -42,22 +81,25 @@ body {
 }
 
 h2 {
-    margin-top: 30px;
-    margin-bottom: 14px;
+    margin-top: 50px;
+    margin-bottom: 16px;
     font-size: 18px;
     text-transform: uppercase;
     letter-spacing: 1px;
+    color: #d6c2c2;
 }
 
 /* ======================
-   KEAHLIAN (MENDATAR)
+   KEAHLIAN
 ====================== */
 .skills-section {
+    order: 3;
     margin-top: 20px;
 }
 
 .skills-grid {
     display: flex;
+    justify-content: center;
     gap: 25px;
     flex-wrap: wrap;
 }
@@ -65,11 +107,6 @@ h2 {
 .skill-card {
     width: 130px;
     text-align: center;
-}
-
-.skill-card img {
-    width: 42px;
-    margin-bottom: 8px;
 }
 
 .circle {
@@ -92,66 +129,46 @@ h2 {
 }
 
 /* ======================
-   LIST & LINK
+   JUDUL
 ====================== */
-.list {
-    list-style: none;
-}
-
-.list li {
-    margin-bottom: 6px;
-    font-size: 14px;
-}
-
-a {
-    color: #2f6f6b;
-    text-decoration: none;
+h2 {
+    margin-top: 30px;
+    margin-bottom: 14px;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #ffffff;
 }
 
 /* ======================
-   KANAN
+   KONTAK
 ====================== */
-.right {
-    flex: 0.9;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.list {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px:
 }
 
-.photo-bg {
-    position: absolute;
-    width: 280px;
-    height: 380px;
-    background: #2f6f6b;
-    border-radius: 50% 50% 40% 40%;
-    z-index: 1;
+.list li {
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 1.6:
 }
 
-.right img {
-    width: 240px;
-    border-radius: 10px;
-    z-index: 2;
+a {
+    color: #444;
+    text-decoration: none;
 }
 
 /* ======================
    RESPONSIVE
 ====================== */
-@media (max-width: 900px) {
-    .container {
-        flex-direction: column-reverse;
-        text-align: center;
-    }
-
-    .skills-grid {
-        justify-content: center;
-    }
-
-    .photo-bg {
-        display: none;
+@media (max-width: 600px) {
+    .left h1 {
+        font-size: 28px;
     }
 
     .right img {
-        margin-bottom: 30px;
+        width: 130px;
     }
 }
